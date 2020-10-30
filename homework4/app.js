@@ -21,7 +21,7 @@ console.log(str1AllCaps);
 console.log(str1[1]);
 
 // 7) Using a string method return the index (number) of "!" in str2.
-console.log(str2[11]);
+console.log(str2.indexOf(['!']));
 
 // 8) Using the slice method retrieve "hell" out of str2, store the result in a new variable named str3
 const str3 = str2.slice(0, 4);
@@ -66,14 +66,28 @@ if (me.greet.name.includes('e') === true) {
 }
 
 // 17) Write an if statement that checks if me has a canDrink property. If true write a nested if statement that checks that the value of canDrink property is true. If true should write to the console/document `${me.name} can drink`. If false (nested) should write to the console document "${me.name} cannot drink" BONUS: Create a method that does the same thing that belongs to the me object and use "this" instead of "me" HINT: hasOwnProperty example of if statement structure below
-if (me.hasOwnProperty('canDrink')) {
-    if(me.canDrink === true) {
-        console.log(`${me.name} can drink.`);
-    } else if (me.canDrink === false) {
-        console.log(`${me.name} cannot drink.`);
-    } else {
-        console.log(`${me.name} hasn't said if he can drink.`); 
+
+// if (me.hasOwnProperty('canDrink')) {
+//     if(me.canDrink === true) {
+//         console.log(`${me.name} can drink.`);
+//     } else if (me.canDrink === false) {
+//         console.log(`${me.name} cannot drink.`);
+//     } else {
+//         console.log(`${me.name} hasn't said if he can drink.`); 
+//     }
+// }
+
+me.thisFun = 
+function () {
+    if (this.hasOwnProperty('canDrink')) {
+        if(this.canDrink === true) {
+            return `${this.name} can drink.`;
+        } else if (this.canDrink === false) {
+            return `${this.name} cannot drink.`;
+        } else {
+            return `${this.name} hasn't said if he can drink.`; 
+        }
     }
 }
-
-
+console.log(me)
+console.log(me.thisFun());
