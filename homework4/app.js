@@ -21,7 +21,7 @@ console.log(str1AllCaps);
 console.log(str1[1]);
 
 // 7) Using a string method return the index (number) of "!" in str2.
-console.log(str2.indexOf(['!']));
+console.log(str2.indexOf(['!'])); // study session helped me get the right answer.
 
 // 8) Using the slice method retrieve "hell" out of str2, store the result in a new variable named str3
 const str3 = str2.slice(0, 4);
@@ -52,20 +52,22 @@ console.log(me);
 // 14) append a method onto our me object named greet, the value should be an anonymous function that should write `Hello my name is ${this.name}!`
 me.greet = 
 function () {
-    return `Hello my name is ${this.name}!`;
+    console.log(`Hello my name is ${this.name}!`); // study session helped me get the right answer.
 }
 
 // 15) call your greet method
-console.log(me.greet());
+me.greet(); // study session helped me get the current answer.
 
 // 16) write an if statement that checks if me.name includes an "e". If true should write to the console/document "Your name contains an e". If false should write to the console/document "Your name does NOT contain an E" EXAMPLE: my name is harcourt therefore should print "Your name does NOT contain an E" to the console or document. You'll want to use the include string method
-if (me.greet.name.includes('e') === true) {
-    console.log('Your name contains an e')
-} else if (me.greet.name.includes('e') === false) {
-    console.log('Your name does NOT contain an E')
-}
+if (me.name.includes('e') === true) {  
+    console.log('Your name contains an e');
+} else {
+    console.log('Your name does NOT contain an E');
+}// study session helped me get the current answer.
 
 // 17) Write an if statement that checks if me has a canDrink property. If true write a nested if statement that checks that the value of canDrink property is true. If true should write to the console/document `${me.name} can drink`. If false (nested) should write to the console document "${me.name} cannot drink" BONUS: Create a method that does the same thing that belongs to the me object and use "this" instead of "me" HINT: hasOwnProperty example of if statement structure below
+
+// This answer I got on my own
 
 // if (me.hasOwnProperty('canDrink')) {
 //     if(me.canDrink === true) {
@@ -77,8 +79,10 @@ if (me.greet.name.includes('e') === true) {
 //     }
 // }
 
+// Kevin helped me get 'this'
+
 me.thisFun = 
-function () {
+function() {
     if (this.hasOwnProperty('canDrink')) {
         if(this.canDrink === true) {
             return `${this.name} can drink.`;
